@@ -40,6 +40,13 @@ The signature technology identity of Nexora is locked as follows:
 - **Premium:** Nexora Blue (`#2563EB`) → Tech Cyan (`#06B6D4`)
 - **Hero Title:** Deep Indigo (`#4338CA`) → Purple/Violet (`#7C3AED`)
 
+### 60-30-10 Color Psychology Rule
+All Nexora screens must strictly partition color distributions to optimize cognitive load and drive user conversions:
+- **60% Dominant (Background):** Midnight Navy (`#0B1120`) in Dark Mode or Cloud White (`#F8FAFC`) in Light Mode. Promotes clarity, minimalism, and focus.
+- **30% Secondary (Surfaces & Content):** Pure Surface cards (`#FFFFFF`) or Deep Slate cards (`#0F172A`) with high-contrast text to ensure legibility and structural balance.
+- **10% Accent (CTAs & Key Updates):** Nexora Blue (`#2563EB`) or Tech Cyan (`#06B6D4`) to guide the user's attention directly to key buttons and active statuses without visual strain.
+
+
 ---
 
 ## 3. Typography & UI Layout Controls
