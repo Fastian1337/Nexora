@@ -1,0 +1,113 @@
+# ============================================
+# Nexora Platform — .gitignore
+# ============================================
+
+# -------------------- Python --------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+*.whl
+.Python
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.manifest
+*.spec
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Cython
+cython_debug/
+
+# -------------------- Node.js --------------------
+node_modules/
+.next/
+out/
+.nuxt/
+.cache/
+*.tsbuildinfo
+next-env.d.ts
+
+# -------------------- Environment --------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+!.env.example
+
+# -------------------- IDE --------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# -------------------- OS --------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# -------------------- Docker --------------------
+docker-compose.override.yml
+
+# -------------------- Testing --------------------
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+nosetests.xml
+coverage/
+.nyc_output/
+jest-results/
+
+# -------------------- Logs --------------------
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -------------------- Misc --------------------
+*.bak
+*.tmp
+*.temp
+.terraform/
+*.tfstate
+*.tfstate.*

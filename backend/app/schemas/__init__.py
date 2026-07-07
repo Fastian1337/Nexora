@@ -1,0 +1,1 @@
+# Nexora Platform — Pydantic Schemas

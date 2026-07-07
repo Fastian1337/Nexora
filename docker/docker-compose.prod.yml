@@ -1,0 +1,162 @@
+# ============================================
+# Nexora Platform — Docker Compose (Production)
+# ============================================
+# Usage: docker compose -f docker/docker-compose.prod.yml up -d
+
+services:
+  # ---- PostgreSQL Database ----
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: nexora-postgres-prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER} -d ${DATABASE_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1.0"
+    networks:
+      - nexora-internal
+
+  # ---- Redis Cache ----
+  redis:
+    image: redis:7-alpine
+    container_name: nexora-redis-prod
+    restart: always
+    command: >
+      redis-server
+      --appendonly yes
+      --maxmemory 512mb
+      --maxmemory-policy allkeys-lru
+      --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.5"
+    networks:
+      - nexora-internal
+
+  # ---- FastAPI Backend ----
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: nexora-backend-prod
+    restart: always
+    env_file:
+      - ../backend/.env
+    environment:
+      DATABASE_HOST: postgres
+      REDIS_HOST: redis
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_LOG_FORMAT: json
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: "1.0"
+    networks:
+      - nexora-internal
+
+  # ---- Next.js Frontend ----
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: nexora-frontend-prod
+    restart: always
+    environment:
+      NEXT_PUBLIC_API_URL: ${API_URL}
+    depends_on:
+      - backend
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.5"
+    networks:
+      - nexora-internal
+
+  # ---- Nginx Reverse Proxy ----
+  nginx:
+    image: nginx:alpine
+    container_name: nexora-nginx-prod
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+      - frontend
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.25"
+    networks:
+      - nexora-internal
+
+  # ---- n8n Workflow Engine ----
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: nexora-n8n-prod
+    restart: always
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - N8N_HOST=${N8N_HOST}
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=https
+      - WEBHOOK_URL=${N8N_WEBHOOK_URL}
+    volumes:
+      - n8n_data:/home/node/.n8n
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "0.5"
+    networks:
+      - nexora-internal
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  n8n_data:
+    driver: local
+
+networks:
+  nexora-internal:
+    driver: bridge
+    name: nexora-internal
+    internal: false

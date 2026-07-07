@@ -1,0 +1,8 @@
+# ============================================
+# Nexora Platform — Production Dependencies
+# ============================================
+
+-r base.txt
+
+# Production ASGI Server Manager
+gunicorn==23.0.0
