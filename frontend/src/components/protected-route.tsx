@@ -23,7 +23,7 @@ export function ProtectedRoute({ children }: ProtectedRouteProps) {
       <div className="flex h-screen w-screen items-center justify-center bg-background text-foreground">
         <div className="flex flex-col items-center gap-4 text-center">
           {/* Elegant Loading Spinner */}
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-t-blue-500 border-border/40" />
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-t-primary border-border/40" />
           <p className="text-sm font-medium text-muted-foreground font-mono">Resuming session...</p>
         </div>
       </div>
