@@ -58,26 +58,26 @@ function ResetPasswordForm() {
   return (
     <div className="w-full max-w-md space-y-6 rounded-2xl border border-border/50 bg-card/40 p-8 backdrop-blur-xl shadow-2xl">
       <div className="text-center space-y-2">
-        <h2 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
           RESET PASSWORD
         </h2>
-        <p className="text-sm text-muted-foreground">Type your new secure account password</p>
+        <p className="text-sm text-muted-foreground font-semibold">Type your new secure account password</p>
       </div>
 
       {errorMsg && (
-        <div className="rounded-lg bg-red-500/10 border border-red-500/20 p-4 text-xs text-red-500 font-medium">
+        <div className="rounded-xl bg-red-500/10 border border-red-500/20 p-4 text-xs text-red-500 font-semibold">
           {errorMsg}
         </div>
       )}
 
       {success ? (
         <div className="space-y-4 text-center">
-          <div className="rounded-lg bg-green-500/10 border border-green-500/20 p-4 text-xs text-green-500 font-medium">
+          <div className="rounded-xl bg-green-500/10 border border-green-500/20 p-4 text-xs text-green-500 font-semibold">
             Password has been successfully updated.
           </div>
           <Link
             href="/login"
-            className="inline-block px-6 py-2.5 bg-primary text-primary-foreground font-semibold text-xs rounded-lg transition-all"
+            className="inline-block px-6 py-2.5 bg-primary text-primary-foreground font-bold text-xs rounded-xl transition-all"
           >
             Sign In
           </Link>
@@ -91,7 +91,7 @@ function ResetPasswordForm() {
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-border bg-background/50 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all"
+              className="w-full px-3 py-2 rounded-xl border border-border bg-background/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               placeholder="••••••••"
             />
           </div>
@@ -103,7 +103,7 @@ function ResetPasswordForm() {
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full px-3 py-2 rounded-lg border border-border bg-background/50 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-all"
+              className="w-full px-3 py-2 rounded-xl border border-border bg-background/50 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               placeholder="••••••••"
             />
           </div>
@@ -111,7 +111,7 @@ function ResetPasswordForm() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-2.5 mt-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold text-sm rounded-lg transition-all shadow-lg shadow-blue-500/25 disabled:opacity-50 cursor-pointer"
+            className="w-full py-2.5 mt-2 bg-gradient-to-r from-primary to-secondary text-white font-bold text-sm rounded-xl transition-all shadow-md hover:shadow-primary/10 disabled:opacity-50 cursor-pointer"
           >
             {submitting ? "Resetting Password..." : "Update Password"}
           </button>
@@ -124,12 +124,12 @@ function ResetPasswordForm() {
 export default function ResetPasswordPage() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-6 py-12">
-      <div className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-blue-500/10 blur-[80px]" />
-      <div className="absolute bottom-1/4 right-1/4 -z-10 h-80 w-80 rounded-full bg-purple-500/10 blur-[100px]" />
+      <div className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/10 blur-[80px]" />
+      <div className="absolute bottom-1/4 right-1/4 -z-10 h-80 w-80 rounded-full bg-accent/10 blur-[100px]" />
       <React.Suspense fallback={
         <div className="flex flex-col items-center gap-4 text-center">
-          <div className="h-10 w-10 animate-spin rounded-full border-4 border-t-blue-500 border-border/40" />
-          <p className="text-sm font-medium text-muted-foreground font-mono">Loading form context...</p>
+          <div className="h-10 w-10 animate-spin rounded-full border-4 border-t-primary border-border/40" />
+          <p className="text-sm font-semibold text-muted-foreground font-mono">Loading form context...</p>
         </div>
       }>
         <ResetPasswordForm />

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-background text-foreground transition-colors duration-300 font-sans antialiased">
       {/* Subtle background glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 h-[500px] w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,rgba(79,70,229,0.04),transparent_45%)]" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -z-10 h-[500px] w-full max-w-7xl bg-[radial-gradient(ellipse_at_top,rgba(37,99,235,0.05),transparent_45%)]" />
 
       {/* Header */}
       <header className="border-b border-border/40 bg-background/70 backdrop-blur-md sticky top-0 z-50">
@@ -30,7 +30,7 @@ export default function Home() {
             {/* Theme Selector */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-md border border-border/40 hover:bg-card text-muted-foreground hover:text-foreground transition-all cursor-pointer"
+              className="p-2 rounded-xl border border-border/40 hover:bg-card text-muted-foreground hover:text-foreground transition-all cursor-pointer"
               aria-label="Toggle theme"
             >
               {theme === "light" ? (
@@ -52,7 +52,7 @@ export default function Home() {
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/95 text-xs font-bold rounded transition-all shadow-sm"
+              className="px-4 py-2 bg-primary text-primary-foreground hover:bg-primary/95 text-xs font-bold rounded-xl transition-all shadow-sm"
             >
               Get Started
             </Link>
@@ -77,20 +77,20 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <Link
               href="/register"
-              className="px-5 py-2.5 bg-primary text-primary-foreground font-bold text-xs rounded hover:bg-primary/90 transition-all shadow-md"
+              className="px-5 py-2.5 bg-primary text-primary-foreground font-bold text-xs rounded-xl hover:bg-primary/90 transition-all shadow-md"
             >
               Create Account
             </Link>
             <a
               href="#solutions"
-              className="px-5 py-2.5 border border-border/80 bg-card/50 hover:bg-card text-foreground font-semibold text-xs rounded transition-all"
+              className="px-5 py-2.5 border border-border/80 bg-card/50 hover:bg-card text-foreground font-semibold text-xs rounded-xl transition-all"
             >
               See Solutions
             </a>
           </div>
         </section>
 
-        {/* Feature Tab Showcase */}
+        {/* Feature Tab Showcase (rounded-2xl card to match BrainKit) */}
         <section id="solutions" className="space-y-6 max-w-4xl mx-auto">
           <div className="flex justify-center border-b border-border/30 max-w-xs mx-auto">
             <button
@@ -125,7 +125,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="rounded border border-border bg-card p-6 shadow-sm min-h-[280px] flex flex-col justify-between">
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm min-h-[280px] flex flex-col justify-between">
             <div className="flex items-center justify-between pb-3 border-b border-border/40">
               <div className="flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-red-500/50" />
@@ -133,7 +133,7 @@ export default function Home() {
                 <span className="w-2 h-2 rounded-full bg-green-500/50" />
                 <span className="text-xs text-muted-foreground ml-2 font-mono">{activeWorkspace}_workspace</span>
               </div>
-              <span className="text-xs uppercase font-bold text-muted-foreground px-2 py-0.5 rounded bg-muted/60">
+              <span className="text-xs uppercase font-bold text-muted-foreground px-2 py-0.5 rounded-xl bg-muted/60">
                 Preview
               </span>
             </div>
@@ -147,12 +147,12 @@ export default function Home() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="p-3 rounded border border-border/80 bg-background/50 space-y-1">
+                    <div className="p-3 rounded-xl border border-border/80 bg-background/50 space-y-1">
                       <div className="text-xs text-muted-foreground font-semibold">Incoming Request</div>
                       <p className="text-xs font-medium italic">"Is Dr. Sarah free this Friday afternoon?"</p>
                     </div>
 
-                    <div className="p-3 rounded border border-primary/20 bg-primary/5 space-y-1">
+                    <div className="p-3 rounded-xl border border-primary/20 bg-primary/5 space-y-1">
                       <div className="text-xs text-primary font-bold">Action Completed</div>
                       <p className="text-xs font-medium">
                         Booked Friday at 3:30 PM. Sent SMS confirmation to patient.
@@ -169,7 +169,7 @@ export default function Home() {
                     <p className="text-xs text-muted-foreground">Streamline parent onboarding and application tracking.</p>
                   </div>
 
-                  <div className="overflow-hidden rounded border border-border bg-background/50">
+                  <div className="overflow-hidden rounded-xl border border-border bg-background/50">
                     <table className="w-full border-collapse text-left text-xs">
                       <thead>
                         <tr className="border-b border-border bg-muted/30">
@@ -184,7 +184,7 @@ export default function Home() {
                           <td className="p-2.5 font-medium">Muhammad Ali</td>
                           <td className="p-2.5">7 Years</td>
                           <td className="p-2.5">
-                            <span className="px-1.5 py-0.5 rounded bg-yellow-500/10 text-yellow-500 font-bold text-xs">Interview Scheduled</span>
+                            <span className="px-1.5 py-0.5 rounded-xl bg-yellow-500/10 text-yellow-500 font-bold text-xs">Interview Scheduled</span>
                           </td>
                           <td className="p-2.5 text-muted-foreground text-xs">Emailed curriculum details.</td>
                         </tr>
@@ -192,7 +192,7 @@ export default function Home() {
                           <td className="p-2.5 font-medium">Ayesha Siddiqui</td>
                           <td className="p-2.5">5 Years</td>
                           <td className="p-2.5">
-                            <span className="px-1.5 py-0.5 rounded bg-green-500/10 text-green-500 font-bold text-xs">Registered</span>
+                            <span className="px-1.5 py-0.5 rounded-xl bg-green-500/10 text-green-500 font-bold text-xs">Registered</span>
                           </td>
                           <td className="p-2.5 text-muted-foreground text-xs">Added parent details to CRM.</td>
                         </tr>
@@ -210,14 +210,14 @@ export default function Home() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="p-3 rounded border border-border bg-background/50 space-y-1">
+                    <div className="p-3 rounded-xl border border-border bg-background/50 space-y-1">
                       <div className="text-xs text-muted-foreground font-semibold">Bilingual Copy Draft</div>
                       <p className="text-xs">
                         "Enrollment starts next week! 🌟 داخلے شروع ہو چکے ہیں۔ Click the link to register."
                       </p>
                     </div>
 
-                    <div className="p-3 rounded border border-primary/20 bg-primary/5 space-y-1">
+                    <div className="p-3 rounded-xl border border-primary/20 bg-primary/5 space-y-1">
                       <div className="text-xs text-primary font-bold">Scheduling Rule</div>
                       <p className="text-xs text-muted-foreground">
                         Post scheduled for 6:30 PM (optimal engagement window).
@@ -245,21 +245,21 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="p-5 rounded border border-border bg-card space-y-3">
+            <div className="p-5 rounded-2xl border border-border bg-card space-y-3">
               <h3 className="text-sm font-bold">Modular Structure</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Decoupled database architecture means fast response times even during high volume workloads.
               </p>
             </div>
 
-            <div className="p-5 rounded border border-border bg-card space-y-3">
+            <div className="p-5 rounded-2xl border border-border bg-card space-y-3">
               <h3 className="text-sm font-bold">Isolated & Secure</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Every client organization gets full database isolation to protect customer and patient privacy.
               </p>
             </div>
 
-            <div className="p-5 rounded border border-border bg-card space-y-3">
+            <div className="p-5 rounded-2xl border border-border bg-card space-y-3">
               <h3 className="text-sm font-bold">Smart Integrations</h3>
               <p className="text-xs text-muted-foreground leading-relaxed">
                 Connect with n8n, Meta API, Google Workspace, and your local CRM tools out of the box.
@@ -269,7 +269,7 @@ export default function Home() {
         </section>
 
         {/* CTA section */}
-        <section className="rounded border border-primary/20 bg-primary/5 p-6 text-center max-w-2xl mx-auto space-y-4">
+        <section className="rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center max-w-2xl mx-auto space-y-4">
           <h2 className="text-xl font-bold text-foreground">
             Ready to automate your operations?
           </h2>
@@ -279,7 +279,7 @@ export default function Home() {
           <div className="pt-1">
             <Link
               href="/register"
-              className="inline-flex px-5 py-2.5 bg-primary text-primary-foreground font-bold text-xs rounded hover:bg-primary/95 transition-all shadow-md"
+              className="inline-flex px-5 py-2.5 bg-primary text-primary-foreground font-bold text-xs rounded-xl hover:bg-primary/95 transition-all shadow-md"
             >
               Start Free Trial
             </Link>

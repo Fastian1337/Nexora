@@ -2,67 +2,67 @@
 
 @layer base {
   :root {
-    /* Premium Obsidian Indigo Palette (Default Core Theme) */
-    --background: 245 30% 4.5%;      /* #06050c - Deep Indigo Black */
-    --foreground: 0 0% 98%;          /* High contrast white */
+    /* Nexora BrainKit v1.0 Default Theme tokens (Midnight Navy base) */
+    --background: 220 50% 8%;       /* #0B1120 - Midnight Navy */
+    --foreground: 210 40% 98%;      /* Light slate foreground */
 
-    --card: 245 20% 7.5%;            /* #0d0b14 - Rich Obsidian Panel */
-    --card-foreground: 0 0% 98%;
+    --card: 222 47% 11.2%;          /* #0F172A - Deep Slate Card */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 245 30% 4.5%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 50% 8%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 250 89% 65%;          /* #6366f1 - Electric Indigo */
+    --primary: 221 83% 53%;         /* #2563EB - Nexora Blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 245 15% 14%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 244 60% 53%;       /* #4338CA - Deep Indigo */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 240 5% 65%;
-    --muted-foreground: 240 5% 75%;
+    --muted: 215 25% 65%;           /* Muted slate gray */
+    --muted-foreground: 215 20% 75%;
 
-    --accent: 292 84% 60%;           /* #d946ef - Cosmic Orchid/Pink */
+    --accent: 189 94% 43%;          /* #06B6D4 - Tech Cyan */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 245 15% 15%;           /* Translucent boundary stroke */
-    --input: 245 15% 15%;
-    --ring: 250 89% 65%;
+    --border: 217 32% 17%;          /* Translucent slate boundary */
+    --input: 217 32% 17%;
+    --ring: 221 83% 53%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;                 /* 16px border-radius standard */
   }
 
   .light {
-    /* Light Mode Workspace Palette */
-    --background: 240 20% 99%;       /* Soft neutral white */
-    --foreground: 240 10% 4%;
+    /* Nexora BrainKit v1.0 Light Workspace Theme */
+    --background: 210 40% 98%;      /* #F8FAFC - Cloud White */
+    --foreground: 222 47% 11.2%;    /* Dark slate foreground */
 
-    --card: 240 15% 97.5%;           /* Very light gray-blue card */
-    --card-foreground: 240 10% 4%;
+    --card: 0 0% 100%;              /* #FFFFFF - Pure White Surface */
+    --card-foreground: 222 47% 11.2%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 4%;
+    --popover-foreground: 222 47% 11.2%;
 
-    --primary: 250 85% 55%;          /* Rich Indigo */
+    --primary: 221 83% 53%;         /* #2563EB - Nexora Blue */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 244 60% 53%;       /* #4338CA - Deep Indigo */
+    --secondary-foreground: 222 47% 11.2%;
 
-    --muted: 240 4% 46%;
-    --muted-foreground: 240 4% 56%;
+    --muted: 215 16% 47%;
+    --muted-foreground: 215 16% 57%;
 
-    --accent: 292 75% 50%;           /* Cosmic Pink */
+    --accent: 189 94% 43%;          /* #06B6D4 - Tech Cyan */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 6% 90%;
-    --input: 240 6% 90%;
-    --ring: 250 85% 55%;
+    --border: 214 32% 91%;          /* #E2E8F0 - Slate Border */
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
   }
 }
 
@@ -94,24 +94,24 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);                   /* 16px Cards standard */
+  --radius-md: calc(var(--radius) - 4px);        /* 12px Buttons & Inputs */
+  --radius-sm: calc(var(--radius) - 8px);        /* 8px elements */
 }
 
-/* Glassmorphism Styles */
+/* Glassmorphism panel styling following BrainKit rules */
 @utility glass-panel {
-  background: rgba(13, 11, 20, 0.45);
+  background: rgba(15, 23, 42, 0.45);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
 }
 
 .light .glass-panel {
-  background: rgba(248, 249, 250, 0.75);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
 body {
