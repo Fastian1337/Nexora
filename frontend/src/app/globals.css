@@ -2,40 +2,7 @@
 
 @layer base {
   :root {
-    /* Nexora BrainKit v1.0 Default Theme tokens (Midnight Navy base) */
-    --background: 220 50% 8%;       /* #0B1120 - Midnight Navy */
-    --foreground: 210 40% 98%;      /* Light slate foreground */
-
-    --card: 222 47% 11.2%;          /* #0F172A - Deep Slate Card */
-    --card-foreground: 210 40% 98%;
-
-    --popover: 220 50% 8%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 221 83% 53%;         /* #2563EB - Nexora Blue */
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 244 60% 53%;       /* #4338CA - Deep Indigo */
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 215 25% 65%;           /* Muted slate gray */
-    --muted-foreground: 215 20% 75%;
-
-    --accent: 189 94% 43%;          /* #06B6D4 - Tech Cyan */
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 217 32% 17%;          /* Translucent slate boundary */
-    --input: 217 32% 17%;
-    --ring: 221 83% 53%;
-
-    --radius: 1rem;                 /* 16px border-radius standard */
-  }
-
-  .light {
-    /* Nexora BrainKit v1.0 Light Workspace Theme */
+    /* Nexora BrainKit v1.0 Light Workspace Theme (Default Base) */
     --background: 210 40% 98%;      /* #F8FAFC - Cloud White */
     --foreground: 222 47% 11.2%;    /* Dark slate foreground */
 
@@ -62,6 +29,39 @@
 
     --border: 214 32% 91%;          /* #E2E8F0 - Slate Border */
     --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 1rem;                 /* 16px border-radius standard */
+  }
+
+  .dark {
+    /* Nexora BrainKit v1.0 Dark Theme (Midnight Navy) */
+    --background: 220 50% 8%;       /* #0B1120 - Midnight Navy */
+    --foreground: 210 40% 98%;      /* Light slate foreground */
+
+    --card: 222 47% 11.2%;          /* #0F172A - Deep Slate Card */
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 50% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 221 83% 53%;         /* #2563EB - Nexora Blue */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 244 60% 53%;       /* #4338CA - Deep Indigo */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 25% 65%;           /* Muted slate gray */
+    --muted-foreground: 215 20% 75%;
+
+    --accent: 189 94% 43%;          /* #06B6D4 - Tech Cyan */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 32% 17%;          /* Translucent slate boundary */
+    --input: 217 32% 17%;
     --ring: 221 83% 53%;
   }
 }

@@ -16,7 +16,7 @@ from app.models.base import Base, BaseModel
 from app.models.config import Organization, File, SystemSettings
 
 # User & Access Models
-from app.models.user import Permission, Role, User, role_permissions, user_roles
+from app.models.user import Permission, Role, User, UserRole, PermissionGroup, RoleAuditLog, role_permissions
 
 # Billing Models
 from app.models.billing import Plan, Subscription
@@ -42,6 +42,26 @@ from app.models.observability import AuditLog, Notification, Analytics
 # Integration Models
 from app.models.integration import Integration, Webhook
 
+# AI Gateway Models
+from app.models.ai_gateway import (
+    AIProvider,
+    AIModel,
+    PromptTemplate,
+    PromptVersion,
+    AIRequest,
+    AIResponse,
+    ProviderHealth,
+)
+
+# Vector & Search Models
+from app.models.vector import (
+    EmbeddingProvider,
+    EmbeddingModel,
+    VectorIndex,
+    SearchHistory,
+    SearchFeedback,
+)
+
 __all__ = [
     "Base",
     "BaseModel",
@@ -51,8 +71,10 @@ __all__ = [
     "Permission",
     "Role",
     "User",
+    "UserRole",
+    "PermissionGroup",
+    "RoleAuditLog",
     "role_permissions",
-    "user_roles",
     "Plan",
     "Subscription",
     "KnowledgeBase",
@@ -74,4 +96,16 @@ __all__ = [
     "Analytics",
     "Integration",
     "Webhook",
+    "AIProvider",
+    "AIModel",
+    "PromptTemplate",
+    "PromptVersion",
+    "AIRequest",
+    "AIResponse",
+    "ProviderHealth",
+    "EmbeddingProvider",
+    "EmbeddingModel",
+    "VectorIndex",
+    "SearchHistory",
+    "SearchFeedback",
 ]
